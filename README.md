@@ -27,4 +27,5 @@
 3-Modify Network Interface settings With two ways (Manual & Automatic)
 On Click Manual the script will ask you Everything About Network interface
 Configuration Like IP ,Netmask,Default gateway,...
+4-Validation When the user Entered A Uncorrect Networ interface name
 </pre>
