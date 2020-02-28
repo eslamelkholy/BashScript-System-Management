@@ -5,7 +5,7 @@
 <pre>
 1. Yassmin Atif
 2. Eslam Elkholy
-3.Esraa AbdElaziz
+3. Esraa AbdElaziz
 4. Mahmoud Mohamed
 5. Aya Ramadan
 </pre>
@@ -18,6 +18,14 @@
 4-Software Management
 5-Network Management
 6-Security Management
+</pre>
+
+### 1-Processes
+<pre>
+1- Display information about all processes for all users
+2- Display information about about specific process
+3- Kill Specific process using this process id 
+4- change priority of a process based on its nice value
 </pre>
 
 ### 5-Network
