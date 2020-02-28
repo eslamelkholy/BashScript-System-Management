@@ -21,8 +21,10 @@
 </pre>
 
 ### 5-Network
+<pre>
 1-List all Network Interface Available in the System
 2-Display More Info About Specified network Interface
 3-Modify Network Interface settings With two ways (Manual & Automatic)
 On Click Manual the script will ask you Everything About Network interface
 Configuration Like IP ,Netmask,Default gateway,...
+</pre>
