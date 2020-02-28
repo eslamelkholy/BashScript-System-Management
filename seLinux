@@ -1,0 +1,80 @@
+#!/bin/bash
+clear
+echo "* SeLinux Setting*"
+
+select i in "SeLinux mode" "Change mode temporary" "Change mode permenant" "Back"
+do
+case $i in
+        "SeLinux mode" )
+               sestatus | grep "Current mode"
+        ;;
+
+        "Change mode temporary")
+            result=$(/usr/sbin/getenforce)
+            if [ $result == "Permissive" ]
+            then
+               setenforce 1
+            else
+               setenforce 0
+             fi
+        ;;
+
+        "Change mode permenant")
+             result=$(/usr/sbin/getenforce)
+               
+             if [ $result == "Permissive" ]
+            then
+             clear
+             select i in "Enforcing" "Disabled" "Back"
+              do
+             case $i in
+              "Enforcing" ) 
+               sed -i 's/^SELINUX=.*$/SELINUX=enforcing/g' /etc/selinux/config 
+               sudo shutdown -r now
+              ;; 
+              "Disabled" )   
+               sed -i 's/^SELINUX=.*$/SELINUX=disabled/g' /etc/selinux/config
+              sudo shutdown -r now 
+              ;; 
+              "Back")
+                . ./seLinux
+                break
+               ;;
+            esac
+            done
+            
+            else
+                clear
+                select i in "Permissive" "Disabled" "Back"
+              do
+             case $i in
+              "Permissive" )
+               sed -i 's/^SELINUX=.*$/SELINUX=enforcing/g' /etc/selinux/config
+               sudo shutdown -r now
+               ;; 
+              "Disabled" )   
+               sed -i 's/^SELINUX=.*$/SELINUX=disabled/g' /etc/selinux/config
+               sudo shutdown -r now
+               ;; 
+              "Back")
+                . ./seLinux
+                break
+               ;;
+            esac
+            done
+
+            fi
+           
+           ;;
+
+       "Back")
+                . ./security
+                break
+       ;;
+        
+        *)
+                echo "Invalid $REPLY isn't An Option "
+        ;;
+esac
+done
+

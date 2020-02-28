@@ -1,0 +1,38 @@
+echo "*Firewall Configuration*"
+clear
+select i in "firewall status(on/off)" "Enable firewall" "Disable firewall" "Add service into firewall" "Add port into firewall" "Back"
+do
+case $i in        
+        "firewall status(on/off))
+                firewall-cmd --state
+        ;;
+        "Enable firewall")
+                systemctl start firewalld 
+                systemctl enable firewalld    
+        ;;
+        "Disable firewall")
+              systemctl disable firewalld
+               systemctl stop firewalld
+        ;;
+        "Add service into firewall")
+                echo "please enter service name"
+                read serviceName
+                firewall-cmd --permanent --new-service=$serviceName
+                
+        ;;
+        "Add port into firewall")
+               echo "please enter port number/port name"
+               read port
+                sudo firewall-cmd --zone=public --permanent --add-port=$port
+				echo "Used ports"
+				sudo firewall-cmd --zone=public --permanent --list-ports
+        ;;
+        "Back")
+               . ./security
+        ;;
+ 
+        *)
+                echo "Invalid $REPLY isn't An Option "
+        ;;
+esac
+done
