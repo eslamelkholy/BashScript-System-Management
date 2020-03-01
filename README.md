@@ -3,7 +3,7 @@
 
 ### Team members
 <pre>
-1. Yassmin Atif
+1. Yassmin Atif Elbaily
 2. Eslam Elkholy
 3. Esraa AbdElaziz
 4. Mahmoud Mohamed
