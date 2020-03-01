@@ -27,17 +27,19 @@
 2- Display information about about specific process
 3- Kill Specific process using this process id 
 4- change priority of a process based on its nice value
-</pre>
+
 ### 2- Services
 1- Display all running services
 2- Display All stoped and failed services
 3- Mange a specific servuce
+
 ### 3- User
 1- List all users in the system
 2- Add new User
 3- Modify user setting 
 4- Remove specific user
-do
+</pre>
+
 ### 5-Network
 <pre>
 1-List all Network Interface Available in the System
