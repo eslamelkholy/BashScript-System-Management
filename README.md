@@ -10,6 +10,7 @@
 5. Aya Ramadan
 </pre>
 
+<h2> Run only . ./mainMenu.sh </h2>
 ### -This Script Includes
 <pre>
 1-Process Management
